@@ -1,6 +1,7 @@
 import { BsCode, BsEmojiSunglasses } from "react-icons/bs";
-import { GiCakeSlice, GiGalaxy, GiLipstick, GiVideoCamera } from "react-icons/gi";
+import { GiCakeSlice, GiGalaxy, GiLipstick, GiVideoCamera, GiBatMask, GiBowlOfRice } from "react-icons/gi";
 import { FaPaw, FaMedal, FaGamepad } from "react-icons/fa";
+import { DiTechcrunch } from "react-icons/di";
 
 export const topics = [
   {
@@ -10,6 +11,18 @@ export const topics = [
   {
     name: "memes",
     icon: <BsEmojiSunglasses />,
+  },
+  {
+    name: "anime",
+    icon: <GiBowlOfRice />,
+  },
+  {
+    name: "tech",
+    icon: <DiTechcrunch />,
+  },
+  {
+    name: "comics",
+    icon: <GiBatMask />,
   },
   {
     name: "movies",

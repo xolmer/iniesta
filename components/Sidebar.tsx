@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import GoogleLogin from "react-google-login";
+import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
 import { ImCancelCircle } from "react-icons/im";
 import Discover from "./Discover";
@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   const [userProfile, setUserProfile] = useState(false);
 
-  const normalLink = "flex items-center gap-3 hover:bg-neutral-200 p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#00b5b2] rounded";
+  const normalLink = "flex items-center gap-3 hover:bg-neutral-200 p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded";
   return (
     <div>
       <div onClick={() => setShowSidebar((prev) => !prev)} className="block xl:hidden m-2 ml-4 mt-3 text-xl cursor-pointer">
@@ -32,28 +32,7 @@ const Sidebar = () => {
               </div>
             </Link>
           </div>
-          {!userProfile && (
-            <div className="px-2 py-4 hidden xl:block">
-              <p className="text-gray-400">Log in to like and comment on videos</p>
-              <div className="pr-4">
-                <GoogleLogin
-                  clientId=""
-                  onSuccess={() => {}}
-                  onFailure={() => {}}
-                  cookiePolicy={"single_host_origin"}
-                  render={(renderProps) => (
-                    <button
-                      className=" cursor-pointer bg-white text-lg text-[#00b5b2] border-[1px] border-[#00b5b2] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#00b5b2]"
-                      onClick={renderProps.onClick}
-                      disabled={renderProps.disabled}
-                    >
-                      Log in
-                    </button>
-                  )}
-                />
-              </div>
-            </div>
-          )}
+
           <Discover />
           <SuggestedAccounts />
           <Footer />
